@@ -8,7 +8,7 @@ warnings.filterwarnings(action='ignore',)
 ##############################
 # INITIALIZE/LOADING OF DATA
 ngrams = {}
-maximum_n = 4
+maximum_n = 3
 for ngram in range(1, maximum_n+1):  # from unigram to pentagram
     ngrams[ngram] = pd.read_pickle(
         f'data/{ngram}gram.pkl').squeeze().fillna(0)  # read all grams
@@ -100,7 +100,7 @@ class PredictNextWords:
     ####################
 
 
-string = 'interesting choice'
+string = 'university of'
 ob = PredictNextWords(string)
 # predict next word, # returns a series containing likelihood based on data
 print(string)
