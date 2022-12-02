@@ -11,7 +11,7 @@ ngrams = {}
 maximum_n = 3
 for ngram in range(1, maximum_n+1):  # from unigram to pentagram
     ngrams[ngram] = pd.read_pickle(
-        f'data/{ngram}gram.pkl').squeeze().fillna(0)  # read all grams
+        f'data/{ngram}gram.pkl').squeeze()  # read all grams
 all_words = ngrams[1].index.values  # get unigram words
 all_words = pd.Series(word[0]
                       for word in all_words)  # from tuple to word/string
